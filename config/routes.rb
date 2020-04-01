@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :event_searches
   # template instructions: make sure %i[new edit] is included
   resources :movies, except: %i[new edit]
   # RESTful routes
