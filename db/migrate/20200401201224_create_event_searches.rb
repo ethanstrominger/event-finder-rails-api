@@ -2,8 +2,7 @@ class CreateEventSearches < ActiveRecord::Migration[5.2]
   def change
     create_table :event_searches do |t|
       t.string :source
-      t.string :group
-      t.string :event
+      t.string :keyword
       t.date :start_date
       t.time :start_time
       t.date :end_date

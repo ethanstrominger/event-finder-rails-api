@@ -10,21 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_01_184624) do
+ActiveRecord::Schema.define(version: 2020_04_01_202318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "destroys", force: :cascade do |t|
-    t.string "Example"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "event_searches", force: :cascade do |t|
     t.string "source"
-    t.string "group"
-    t.string "event"
+    t.string "keyword"
     t.date "start_date"
     t.time "start_time"
     t.date "end_date"
@@ -33,14 +26,6 @@ ActiveRecord::Schema.define(version: 2020_04_01_184624) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_event_searches_on_user_id"
-  end
-
-  create_table "examples", force: :cascade do |t|
-    t.text "text", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_examples_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -64,6 +49,5 @@ ActiveRecord::Schema.define(version: 2020_04_01_184624) do
   end
 
   add_foreign_key "event_searches", "users"
-  add_foreign_key "examples", "users"
   add_foreign_key "movies", "users"
 end

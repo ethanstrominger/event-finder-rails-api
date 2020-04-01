@@ -9,10 +9,12 @@ end
 
 RSpec.describe 'Authentication API' do
   before(:all) do
+    EventSearch.delete_all
     User.delete_all
   end
 
   after(:all) do
+    EventSearch.delete_all
     User.delete_all
   end
 
