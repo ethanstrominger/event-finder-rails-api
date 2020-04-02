@@ -22,6 +22,10 @@ class EventSearchesController < ProtectedController #changedoc
   # POST /event_searches
   def create
     # changedoc was @event_search = EventSearch.new(event_search_params)
+    # pp "aaaaaaaaaaaaaaaaaaa"
+    # pp event_search_params.inspect
+    # pp "b"
+    # pp event_searches_params.inspect
     @event_search = current_user.event_searches.build(event_search_params) #changedoc
     if @event_search.save
       render json: @event_search, status: :created, location: @event_search
@@ -54,6 +58,9 @@ class EventSearchesController < ProtectedController #changedoc
 
   # Only allow a trusted parameter "white list" through.
   def event_search_params
-    params.require(:event_search).permit(:source, :keyword, :start_date, :start_time, :end_date, :end_time, :user_id)
+    puts '1',:source
+    puts '2',:keyword
+    puts '3',:start_date
+    params.require(:event_search).permit(:source, :keyword, :start_date, :end_date, :start_time, :end_time)
   end
 end

@@ -4,8 +4,8 @@ require 'rails_helper'
 
 require 'requests/auth_helper'
 
-require 'debug_helper'
-include DebugHelper
+# require 'debug_helper'
+# include DebugHelper
 
 RSpec.configure do |c|
   c.include AuthHelper
