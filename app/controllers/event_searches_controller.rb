@@ -22,10 +22,7 @@ class EventSearchesController < ProtectedController #changedoc
   # POST /event_searches
   def create
     # changedoc was @event_search = EventSearch.new(event_search_params)
-    # pp "aaaaaaaaaaaaaaaaaaa"
-    # pp event_search_params.inspect
-    # pp "b"
-    # pp event_searches_params.inspect
+
     @event_search = current_user.event_searches.build(event_search_params) #changedoc
     if @event_search.save
       render json: @event_search, status: :created, location: @event_search

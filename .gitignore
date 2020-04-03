@@ -1,5 +1,7 @@
 # Created by https://www.gitignore.io/api/macos,linux
 
+config/credentials.yml.enc
+
 ### macOS ###
 *.DS_Store
 .AppleDouble
@@ -203,3 +205,6 @@ bower.json # same
 
 # End of https://www.gitignore.io/api/rails
 
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
